@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react'
 import { dayKey } from './utils/date'
 import './App.css'
 import Populate from './assets/components/Populate'
-import Nav from './assets/components/nav'
+import Nav from './assets/components/Nav'
 import SuccessPopUp from './assets/components/SuccessPopUp'
 import Counter from './assets/components/Counter'
 
