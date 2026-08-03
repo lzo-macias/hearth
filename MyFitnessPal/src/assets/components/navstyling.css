@@ -1,0 +1,57 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* CHANGED: gap 200px -> token gap. A fixed 200px gap plus 100px of padding
+       on each side of each button needed 535px minimum, so on a 390px phone the
+       nav forced the entire page to scroll sideways. */
+    gap: var(--space-2);
+
+    /* CHANGED: width 100vw -> 100%. 100vw includes the scrollbar width, so it's
+       always a little wider than the real content area on desktop. */
+    width: 100%;
+    max-width: var(--container-sm);
+    margin: 0 auto var(--space-5);
+    padding: var(--space-4) var(--space-4) 0;
+}
+
+.nav button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+
+    /* CHANGED: padding 5px 100px -> flexible. The buttons share the row now
+       instead of demanding a fixed width, so they shrink on narrow screens. */
+    flex: 1 1 0;
+    max-width: 180px;
+    padding: var(--space-3) var(--space-4);
+
+    /* CHANGED: was border:none on a transparent background — nothing indicated
+       these were tappable. */
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+
+    font-style: italic;          /* kept — your styling choice, left alone */
+    font-size: var(--text-base);
+    color: var(--color-ink-muted);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: color var(--transition-fast),
+                border-color var(--transition-fast),
+                background var(--transition-fast);
+}
+
+.nav button:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background: var(--color-primary-subtle);
+}
+
+/* CHANGED (new): keyboard users had no visible focus indicator at all. */
+.nav button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}

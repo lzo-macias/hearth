@@ -1,0 +1,114 @@
+.mainContainer {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    background-color: var(--purple-50);
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.itemImage {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.formContainer input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: .5px solid var(--neutral-500);
+    border-radius: 6px;
+    transition: box-shadow .12s ease
+}
+
+.formContainer input:hover {
+    box-shadow:
+        var(--shadow-sm),
+        var(--shadow-primary);
+    border: 1px solid var(--purple-700)
+}
+
+.itemContainer {
+    background-color: var(--purple-300);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.itemContainer li {
+    color:var( --neutral-900);
+    font-size: var( --text-base);
+    font-weight: 600
+}
+
+.itemContainer button {
+    margin-top: 20px;
+    border-radius: 6px;
+    padding: 5px;
+    background-color: var(--purple-400);
+    appearance: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: .5px solid var(--purple-950);
+    color:var( --neutral-900);
+    font-size: var( --text-base);
+    font-weight: 600
+}
+
+.data {
+    margin-top: 20px;
+}
+
+.amtof {
+    /* CHANGED: display:block -> flex + centering. `block` still gave you no way
+       to centre the glyph — it sat on its baseline at the left edge. Flex
+       centering doesn't care about font metrics or text length. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    /* CHANGED: removed padding: 5px. The global reset sets box-sizing:
+       border-box, so padding eats INTO the width rather than adding to it —
+       at 20px that left a 10x10 content box. */
+
+    /* CHANGED: was inheriting line-height 1.5 (24px at 16px font) from body,
+       which overflowed the content box and pushed the digit downward. */
+    line-height: 1;
+
+    border-radius: 50%;
+    background: var(--purple-400);
+    color: var(--neutral-900);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+
+    /* The parent is a column flex container (align-items defaults to stretch),
+       so without this the badge stretches across the whole column. */
+    align-self: left;
+}
+.addbtn {
+    margin-top: 5px;
+}
+.btnstogetehr {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    gap: 0px;
+}
