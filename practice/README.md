@@ -5,19 +5,27 @@ the actual mistakes, isolated so you can see the concept underneath.
 
 ## How to run
 
-From the repo root:
-
 ```bash
-node --test practice/
+cd practice
+npm test              # all 60 tests
+npm run test:watch    # re-runs as you save — leave this open while you work
 ```
 
-Zero dependencies. Node 22 has a test runner built in.
+Zero dependencies — Node 22 has a test runner built in. There is nothing to install.
 
 To run one topic:
 
 ```bash
-node --test practice/01-maps/
+cd practice
+node --test "01-maps/*.test.js"
 ```
+
+> Use the quoted glob, not `node --test 01-maps/`. Passing a bare directory makes
+> Node try to *execute* it instead of searching it, and you get a confusing
+> `MODULE_NOT_FOUND`.
+
+You should see **60 tests, 60 failing** on your first run. That's correct — every
+exercise is a stub that throws.
 
 Every test **fails at first** — the exercise files are stubs that throw `TODO`.
 Your job is to make them pass. Solutions are in `practice/solutions/`, but read the

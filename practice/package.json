@@ -1,0 +1,9 @@
+{
+  "name": "protein-tracker-practice",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"**/*.test.js\"",
+    "test:watch": "node --test --watch \"**/*.test.js\""
+  }
+}
